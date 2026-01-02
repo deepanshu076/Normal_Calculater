@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.calculator-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.calculator {
+    background: #0f3460;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #64dfdf;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.display {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: right;
+    min-height: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+}
+
+.previous-operand {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    min-height: 30px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.current-operand {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-top: 5px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.btn {
+    border: none;
+    border-radius: 10px;
+    padding: 18px 10px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn-number {
+    background: #1a5a73;
+    color: white;
+}
+
+.btn-number:hover {
+    background: #1e6f8c;
+    box-shadow: 0 0 10px rgba(26, 90, 115, 0.5);
+}
+
+.btn-operation {
+    background: #ff7b54;
+    color: white;
+}
+
+.btn-operation:hover {
+    background: #ff8f6d;
+    box-shadow: 0 0 10px rgba(255, 123, 84, 0.5);
+}
+
+.btn-clear {
+    background: #ff5c8d;
+    color: white;
+}
+
+.btn-clear:hover {
+    background: #ff7aa8;
+    box-shadow: 0 0 10px rgba(255, 92, 141, 0.5);
+}
+
+.btn-delete {
+    background: #4d96ff;
+    color: white;
+}
+
+.btn-delete:hover {
+    background: #6ca7ff;
+    box-shadow: 0 0 10px rgba(77, 150, 255, 0.5);
+}
+
+.btn-equals {
+    background: #5cd85a;
+    color: white;
+}
+
+.btn-equals:hover {
+    background: #7ae078;
+    box-shadow: 0 0 10px rgba(92, 216, 90, 0.5);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.security-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(100, 223, 223, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.info {
+    font-size: 0.85rem;
+}
+
+.instructions {
+    background: rgba(15, 52, 96, 0.7);
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.instructions h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: #64dfdf;
+}
+
+.instructions ul {
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+.instructions li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+}
+
+.instructions li:before {
+    content: "•";
+    color: #ff7b54;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 500px) {
+    .calculator {
+        padding: 15px;
+    }
+    
+    .current-operand {
+        font-size: 2rem;
+    }
+    
+    .btn {
+        padding: 15px 5px;
+        font-size: 1.1rem;
+    }
+    
+    .buttons-grid {
+        gap: 10px;
+    }
+}
